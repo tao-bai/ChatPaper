@@ -6,6 +6,10 @@ import json
 import os
 import re
 from collections import namedtuple
+import time
+
+import tkinter as tk
+from tkinter import filedialog
 
 import arxiv
 import numpy as np
@@ -522,11 +526,15 @@ if __name__ == '__main__':
     parser.add_argument("--save_image", default=False,
                         help="save image? It takes a minute or two to save a picture! But pretty")
     parser.add_argument("--file_format", type=str, default='md', help="导出的文件格式，如果存图片的话，最好是md，如果不是的话，txt的不会乱")
-    parser.add_argument("--language", type=str, default='zh', help="The other output lauguage is English, is en")
+    parser.add_argument("--language", type=str, default='en', help="The other output lauguage is English, is en")
 
-    paper_args = PaperParams(**vars(parser.parse_args()))
-    import time
+    args = parser.parse_args()
 
+    root = tk.Tk()
+    root.withdraw()
+    args.pdf_path = filedialog.askopenfilename()
+
+    paper_args = PaperParams(**vars(args))
     start_time = time.time()
     chat_paper_main(args=paper_args)
     print("summary time:", time.time() - start_time)

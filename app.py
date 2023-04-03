@@ -150,6 +150,6 @@ if __name__ == "__main__":
         args), format="%(asctime)s %(message)s", datefmt="%m/%d/%Y %I:%M:%S %p")
 
     if args.debug:
-        app.run(debug=True, threaded=True, host='0.0.0.0', port=5000)
+        app.run(debug=True, threaded=True, host='0.0.0.0', port=5001)
     else:
-        app.run(debug=False, threaded=True, host='0.0.0.0', port=5000)
+        app.run(debug=False, threaded=True, host='0.0.0.0', port=5001)

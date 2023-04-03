@@ -44,7 +44,7 @@ class Paper:
         
     def get_image_path(self, image_path=''):
         """
-        将PDF中的第一张图保存到image.png里面，存到本地目录，返回文件名称，供gitee读取
+        将PDF中的第一张图保存到image.png里面,存到本地目录,返回文件名称,供gitee读取
         :param filename: 图片所在路径，"C:\\Users\\Administrator\\Desktop\\nwd.pdf"
         :param image_path: 图片提取后的保存路径
         :return:
